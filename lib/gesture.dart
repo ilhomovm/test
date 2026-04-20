@@ -52,7 +52,7 @@ class AsosiyPage extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            print("Mirzarahim");
+            print("Bosildi");
           },
           child: Text("Button"),
         ),
