@@ -1,0 +1,84 @@
+import 'package:flutter/material.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    List<String> items = ["A", "B"];
+    return Scaffold(
+      body: ListView.builder(
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          return Card(child: Text(items[index]));
+        },
+      ),
+    );
+  }
+}
+
+
+
+
+
+BottomNavigationBar
+
+import 'package:flutter/material.dart';
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int currentIndex = 1;
+
+  List pages = [Dashboar(), Setting(), Profie()];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(body: pages[currentIndex]);
+  }
+}
+
+class Dashboar extends StatelessWidget {
+  const Dashboar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(body: Center(child: Text("Dashboar")));
+  }
+}
+
+class Setting extends StatelessWidget {
+  const Setting({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(body: Center(child: Text("Setting")));
+  }
+}
+
+class Profie extends StatelessWidget {
+  const Profie({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(body: Center(child: Text("Profie")));
+  }
+}
+
+
+
+  child: DecoratedBox(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Color(0xff0f2027), Color(0xff203a43)],
+            ),
+          ),
+          child: pages[currentIndex],
+        ),
